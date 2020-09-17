@@ -7,9 +7,25 @@ public class GameManager : MonoBehaviour
     public Ball ball;
     public Paddle paddle;
     public Restart restart;
+    public int winningScore = 2;
+
+    public enum State
+    {
+        StartGame,
+        Paused,
+        EndGame,
+    }
+
+    public State state = State.StartGame;
 
     public static Vector2 bottomLeft;
     public static Vector2 topRight;
+
+    private int leftScore;
+    private int rightScore;
+    private Display display;
+    private GameObject displayCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +38,67 @@ public class GameManager : MonoBehaviour
         Paddle paddle2 = Instantiate (paddle) as Paddle;
         paddle1.Init(true); //right paddle
         paddle2.Init(false); //left paddle
+
+        displayCanvas = GameObject.Find("Display_Canvas");
+        display = displayCanvas.GetComponent<Display>();
+
+        display.leftWin.enabled = false;
+        display.rightWin.enabled = false;
+
     }
 
     // Update is called once per fra
+
+    public void LeftPoint()
+    {
+        leftScore++;
+        display.leftPlayerScore.text = leftScore.ToString();
+        validateWin();
+        NewBall();
+    }
+    public void RightPoint()
+    {
+        rightScore++;
+        display.rightPlayerScore.text = rightScore.ToString();
+        validateWin();
+        NewBall();
+    }
+
+    private void NewBall()
+    {
+        if (state == State.StartGame)
+        {
+            GameObject.Destroy(ball.gameObject);
+            Instantiate(ball);
+        }
+    }
+
+    void validateWin()
+    {
+        if(rightScore >= winningScore)
+        {
+            RightWins();
+        }
+        else if (leftScore >= winningScore)
+        {
+            LeftWins();
+        }
+    }
+    private void RightWins()
+    {
+        display.rightWin.enabled = true;
+        EndGame();
+    }
+    private void LeftWins()
+    {
+        display.leftWin.enabled = true;
+        EndGame();
+    }
+    private void EndGame()
+    {
+        GameObject.Destroy(ball.gameObject);
+        Time.timeScale = 0;
+        state = State.EndGame;
+    }
 }
+
