@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
 
     float radius;
     Vector2 direction;
+    public Vector2 velocity { get; private set;}
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,8 @@ public class Ball : MonoBehaviour
     void Update()
     {
         transform.Translate (direction * speed * Time.deltaTime);
+
+        velocity = direction * speed;
 
         // Bounce off top and bottom
 
