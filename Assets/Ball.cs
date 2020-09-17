@@ -10,9 +10,14 @@ public class Ball : MonoBehaviour
     float radius;
     Vector2 direction;
     public Vector2 velocity { get; private set;}
+
+    private GameManager gameManager;
+    private bool pointFlag;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         direction = Vector2.one.normalized; //direction is (1,1) normalized
         radius = transform.localScale.x / 2; //half the width
         
@@ -38,14 +43,26 @@ public class Ball : MonoBehaviour
             Debug.Log("Right player wins");
 
             //for now, freeze time
-            Time.timeScale = 0;
-            enabled = false; // stop updating script
+            //Time.timeScale = 0;
+            //enabled = false; // stop updating script
+            if (!pointFlag)
+            {
+                pointFlag = true;
+                gameManager.RightPoint();
+            }
+            
         }
 
         if(transform.position.x > GameManager.topRight.x - radius && direction.x > 0){
             Debug.Log("Left player wins");
-            Time.timeScale = 0;
-            enabled = false; // stop updating script
+            //Time.timeScale = 0;
+            //enabled = false; // stop updating script
+            if (!pointFlag)
+            {
+                pointFlag = true;
+                gameManager.LeftPoint();
+            }
+            
         }
         
     }

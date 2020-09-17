@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{59972000-A102-93F3-E252-4AFE00D882C8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Paddle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameManager.cs">
     <Files>
-      <File FileName="Assets/GameManager.cs" Line="19" Column="9" />
-      <File FileName="Assets/Paddle.cs" Line="93" Column="10" />
-      <File FileName="Assets/Restart.cs" />
-      <File FileName="Assets/Ball.cs" Line="19" Column="6" />
+      <File FileName="Assets/GameManager.cs" Line="86" Column="6" />
+      <File FileName="Assets/Paddle.cs" Line="88" Column="10" />
+      <File FileName="Assets/Restart.cs" Line="1" Column="1" />
+      <File FileName="Assets/Ball.cs" Line="46" Column="15" />
       <File FileName="Assets/SpriteVisibility.cs" Line="1" Column="1" />
+      <File FileName="Assets/Display.cs" Line="9" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Pong" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Paddle.cs" selected="True" />
+              <Node name="GameManager.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -21,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ae313b49-1dae-44fc-9abf-50cb8ba0e8cc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2892bbfd-2351-48d5-ad9b-650b9313d9cf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
