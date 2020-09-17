@@ -12,11 +12,24 @@ public class Paddle : MonoBehaviour
 
     string input;
     public bool isRight;
+    public bool isBot;
+    private Ball ball;
+    private Vector2 forward;
 
     // Start is called before the first frame update
     void Start()
     {
         height = transform.localScale.y;
+        ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
+        if (!isRight)
+        {
+            forward = Vector2.right;
+          
+        }
+        else
+        {
+            forward = Vector2.left;
+        }
     }
 
     public void Init(bool isRightPaddle){
@@ -39,6 +52,7 @@ public class Paddle : MonoBehaviour
             pos += Vector2.right * transform.localScale.x; //Move a bit to the right
 
             input = "PaddleLeft";
+            isBot = true;
         }
 
         transform.position = pos;
@@ -52,7 +66,7 @@ public class Paddle : MonoBehaviour
         //Now let's move the paddle!
 
         //Get Axis is a number between -1 to 1 (-1 for down, 1 for up)
-        float move = Input.GetAxis(input) * Time.deltaTime * speed;
+        float move = GetY();
 
         //Restrict paddle movement
         //stop paddle from moving too low
@@ -65,5 +79,28 @@ public class Paddle : MonoBehaviour
         }
 
         transform.Translate (move * Vector2.up);
+    }
+
+    private float GetY()
+    {
+        float pos = transform.position.y;
+        if (isBot)
+        {
+            if (ApproachingBall())
+            {
+                pos = Mathf.MoveTowards(transform.position.y, ball.transform.position.y, speed);
+            }
+        }
+        else
+        {
+            pos = Input.GetAxis(input) * Time.deltaTime * speed;
+        }
+        return pos;
+    }
+
+    private bool ApproachingBall()
+    {
+        float dotProduct = Vector2.Dot(ball.velocity, forward);
+        return dotProduct < 0f;
     }
 }
