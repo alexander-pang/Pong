@@ -12,6 +12,7 @@ public class Paddle : MonoBehaviour
 
     string input;
     public bool isRight;
+    [SerializeField]
     public bool isBot;
     private Ball ball;
     private Vector2 forward;
@@ -32,7 +33,7 @@ public class Paddle : MonoBehaviour
         }
     }
 
-    public void Init(bool isRightPaddle){
+    public void Init(bool isRightPaddle, bool bot){
 
         isRight = isRightPaddle;
 
@@ -52,7 +53,7 @@ public class Paddle : MonoBehaviour
             pos += Vector2.right * transform.localScale.x; //Move a bit to the right
 
             input = "PaddleLeft";
-            isBot = true;
+            isBot = bot;
         }
 
         transform.position = pos;

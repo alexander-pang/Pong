@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{59972000-A102-93F3-E252-4AFE00D882C8}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameManager.cs">
     <Files>
-      <File FileName="Assets/GameManager.cs" Line="86" Column="6" />
-      <File FileName="Assets/Paddle.cs" Line="88" Column="10" />
-      <File FileName="Assets/Restart.cs" Line="1" Column="1" />
-      <File FileName="Assets/Ball.cs" Line="46" Column="15" />
-      <File FileName="Assets/SpriteVisibility.cs" Line="1" Column="1" />
-      <File FileName="Assets/Display.cs" Line="9" Column="29" />
+      <File FileName="Assets/GameManager.cs" Line="40" Column="48" />
+      <File FileName="Assets/Paddle.cs" Line="43" Column="30" />
+      <File FileName="Assets/Restart.cs" Line="11" Column="29" />
+      <File FileName="Assets/Ball.cs" Line="1" Column="1" />
+      <File FileName="Assets/SpriteVisibility.cs" />
+      <File FileName="Assets/Display.cs" />
+      <File FileName="Assets/PauseMenu.cs" Line="48" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
