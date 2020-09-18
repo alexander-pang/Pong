@@ -70,6 +70,8 @@ public class Ball : MonoBehaviour
         if (other.tag == "Paddle"){
             bool isRight = other.GetComponent<Paddle> ().isRight;
 
+            FindObjectOfType<AudioManager>().Play("paddleHit");
+
             //if hitting right paddle and moving right, flip direction
 
             if(isRight == true && direction.x > 0){

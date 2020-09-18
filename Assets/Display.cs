@@ -9,4 +9,7 @@ public class Display : MonoBehaviour
     public Text leftPlayerScore;
     public Text rightWin;
     public Text leftWin;
+    public Image pongTitle;
+    public Sprite pongBackground;
+    
 }
