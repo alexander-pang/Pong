@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
         Instantiate(restart);
         Paddle paddle1 = Instantiate (paddle) as Paddle;
         Paddle paddle2 = Instantiate (paddle) as Paddle;
-        paddle1.Init(true); //right paddle
-        paddle2.Init(false); //left paddle
+        paddle1.Init(true,false); //right paddle
+        paddle2.Init(false,true); //left paddle
 
         displayCanvas = GameObject.Find("Display_Canvas");
         display = displayCanvas.GetComponent<Display>();
