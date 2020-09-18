@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
 
         display.leftWin.enabled = false;
         display.rightWin.enabled = false;
+        display.pongTitle.enabled = false;
+        
 
     }
 
@@ -98,6 +100,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Destroy(ball.gameObject);
         Time.timeScale = 0;
+        display.pongTitle.enabled = true;
         state = State.EndGame;
     }
 }
