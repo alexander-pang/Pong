@@ -3,7 +3,7 @@ NOTE ON PLAYING IN BUILD: There are issues/glitches that don't exist during play
 
 How to Pause the game: Press the Esc key on your keyboard and the pause menu will pop up.  You may press Esc again to resume, or press the resume button.
 On the pause menu, one player is already selected so you will be playing against a bot.  The 2 player button is not working, if you want to play against a human you must change 
-the code in the Game Manager for the paddles. Set the second paddle to false.  The stats button is also not currently working, but the current scores during the game are shown on the main screen.
+the code in the Game Manager for the paddles. Set the second paddle to false. In GameManager.cs, in the Start() method, set paddle2.Init(false,false).  The stats button is also not currently working, but the current scores during the game are shown on the main screen.
 
 The reset button will reset the scores and start a new game. 
 
